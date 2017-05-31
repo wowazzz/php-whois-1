@@ -1,17 +1,17 @@
 {
-    "name": "hugsbrugs/php-whois",
+    "name": "davidfricker/whois-parser",
     "description": "Convenient methods for querying whois",
     "keywords":["whois", "php"],
     "authors": [
         {
-            "name": "Hugo Maugey",
-            "email": "hugo@maugey.fr"
+            "name": "wowazzz",
+            "email": "your@mail"
         }
     ],
     "require": {
         "layershifter/tld-extract": "^1.0"
     },
     "autoload":{
-    	"psr-4": {"HugsBrugs\\": "src/HugsBrugs/"}
+    	"psr-4": {"DavidFricker\\": "src/DavidFricker/"}
     }
 }

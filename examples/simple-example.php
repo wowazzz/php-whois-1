@@ -15,7 +15,7 @@ ini_set('max_execution_time', 0);
 // Load composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use HugsBrugs\HugWhois\HugWhois as HugWhois;
+use DavidFricker\DFWhois\DFWhois as DFWhois;
 
 
 $tlds = [
@@ -28,37 +28,37 @@ $tlds = [
 foreach ($tlds as $tld)
 {
 	# Create Whois object
-    $HugWhois = new HugWhois($tld);
+    $DFWhois = new DFWhois($tld);
     
     $whois = [];
 
     # Query whois database and return whois text as UTF-8
-    $whois['text'] = $HugWhois->get_whois_text();
+    $whois['text'] = $DFWhois->get_whois_text();
 
-    $whois['is_ip'] = $HugWhois->is_ip();
+    $whois['is_ip'] = $DFWhois->is_ip();
 
     # Is this tld available ?
-    $whois['is_available'] = $HugWhois->is_available();
+    $whois['is_available'] = $DFWhois->is_available();
 
     # Extract whois informations
-    $whois['infos'] = $HugWhois->extract_infos();
+    $whois['infos'] = $DFWhois->extract_infos();
     
     # Extract all mails from whois
-    $whois['mails'] = $HugWhois->get_mails();
+    $whois['mails'] = $DFWhois->get_mails();
 
-    $whois['registrant_emails'] = $HugWhois->extract_whois_registrant_emails();
-    $whois['registrar_emails'] = $HugWhois->extract_whois_registrar_emails();
+    $whois['registrant_emails'] = $DFWhois->extract_whois_registrant_emails();
+    $whois['registrar_emails'] = $DFWhois->extract_whois_registrar_emails();
     
     # Return whois as HTML (\n replaced by <br>)
-    //$whois['html'] = $HugWhois->whois_html();
+    //$whois['html'] = $DFWhois->whois_html();
     
     # helper functions
-    $whois['registrable_domain'] = $HugWhois->get_registrable_domain();
-    $whois['domain'] = $HugWhois->get_domain();
-    $whois['hostname'] = $HugWhois->get_hostname();
-    $whois['full_host'] = $HugWhois->get_full_host();
-    $whois['tlds'] = $HugWhois->get_tld();
-    $whois['subdomain'] = $HugWhois->get_sub_domain();
+    $whois['registrable_domain'] = $DFWhois->get_registrable_domain();
+    $whois['domain'] = $DFWhois->get_domain();
+    $whois['hostname'] = $DFWhois->get_hostname();
+    $whois['full_host'] = $DFWhois->get_full_host();
+    $whois['tlds'] = $DFWhois->get_tld();
+    $whois['subdomain'] = $DFWhois->get_sub_domain();
 
     # Print
     echo $tld . ' : <br>';

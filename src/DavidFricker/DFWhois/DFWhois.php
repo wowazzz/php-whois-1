@@ -1,13 +1,13 @@
 <?php
 
-namespace HugsBrugs\HugWhois;
+namespace DavidFricker\DFWhois;
 
 use LayerShifter\TLDExtract\Extract as Extract;
 
 /**
  * @todo integrer proxies pour Curl et fsockopen (possible ?)
  */
-class HugWhois
+class DFWhois
 {
     private $domain_or_ip;
 
@@ -193,7 +193,7 @@ class HugWhois
     }
 
     /**
-     * Hug's method for parsing text
+     * method for parsing text
      */
     public function extract_infos($keep_comments = FALSE)
     {
