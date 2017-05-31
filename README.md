@@ -60,7 +60,7 @@ echo '<pre>';print_r($whois);echo '</pre><br>';
 ### Whois servers list
 
 Sources are:
-
+```
 [XML] The existing whois-server-list
 [IANA] IANA
 [PSL] Public Suffix List
@@ -68,6 +68,7 @@ Sources are:
 [MD_WHOIS] Marco d'Itri's Whois list
 [PHOIS] php-whois
 [PHP_WHOIS] phpWhois
+```
 
 The latest list can be found at 
 
